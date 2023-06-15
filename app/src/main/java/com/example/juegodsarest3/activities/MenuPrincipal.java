@@ -8,19 +8,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
-import android.os.Build;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.juegodsarest3.R;
-import com.example.juegodsarest3.models.CredencialTO;
-import com.squareup.picasso.Picasso;
 
 import java.util.Locale;
 
@@ -65,13 +59,11 @@ public class MenuPrincipal extends AppCompatActivity {
         });
     }
         private void configureDenunciaButton() {
-            Button denuncia_button = (Button) findViewById(R.id.denunciabtn);
-            String textoDenuncia = getResources().getString(R.string.Boton_Denuncia);
-            denuncia_button.setText(textoDenuncia);
+            Button denuncia_button = (Button) findViewById(R.id.consultabtn);
             denuncia_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                   // startActivity(new Intent(MenuPrincipal.this, DenunciaActivity.class));
+                    startActivity(new Intent(MenuPrincipal.this, ConsultaActivity.class));
                 }
             });
         }
@@ -80,7 +72,7 @@ public class MenuPrincipal extends AppCompatActivity {
         faq_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //startActivity(new Intent(MenuPrincipal.this, FAQActivity.class));
+                startActivity(new Intent(MenuPrincipal.this, FAQActivity.class));
             }
         });
     }
@@ -89,7 +81,7 @@ public class MenuPrincipal extends AppCompatActivity {
         ranking_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              //  startActivity(new Intent(MenuPrincipal.this, RankingActivity.class));
+              startActivity(new Intent(MenuPrincipal.this, RankingActivity.class));
             }
         });
     }
